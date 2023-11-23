@@ -29,10 +29,10 @@
         <bpmn:flowNodeRef>Event_0s0kaml</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0dy4pny</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0npdmn9</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Gateway_1gvk6y4</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1ac0w3b</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0m9og07</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_13zw5v0</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_1gvk6y4</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:eventBasedGateway id="Gateway_0kyhdxw">
@@ -179,11 +179,6 @@
     <bpmn:sequenceFlow id="Flow_0w5djhc" sourceRef="Gateway_1efohsn" targetRef="StartEvent_1" />
     <bpmn:sequenceFlow id="Flow_0kzurtz" name="Candidatura aceite" sourceRef="Gateway_0kyhdxw" targetRef="Event_1wojw7v" />
     <bpmn:sequenceFlow id="Flow_0fzmj1g" sourceRef="Event_1wojw7v" targetRef="Gateway_1gvk6y4" />
-    <bpmn:exclusiveGateway id="Gateway_1gvk6y4" name="Decisão do coordenador da UFC">
-      <bpmn:incoming>Flow_0fzmj1g</bpmn:incoming>
-      <bpmn:outgoing>Flow_184wyq8</bpmn:outgoing>
-      <bpmn:outgoing>Flow_1ero0i1</bpmn:outgoing>
-    </bpmn:exclusiveGateway>
     <bpmn:intermediateCatchEvent id="Event_1ac0w3b" name="Estado suspenso">
       <bpmn:incoming>Flow_1ero0i1</bpmn:incoming>
       <bpmn:outgoing>Flow_0nedosb</bpmn:outgoing>
@@ -193,7 +188,6 @@
       <bpmn:messageEventDefinition id="MessageEventDefinition_1bb1upu" />
     </bpmn:intermediateCatchEvent>
     <bpmn:sequenceFlow id="Flow_0nedosb" sourceRef="Event_1ac0w3b" targetRef="Event_1wojw7v" />
-    <bpmn:sequenceFlow id="Flow_184wyq8" name="Cancelar" sourceRef="Gateway_1gvk6y4" targetRef="Event_0m9og07" />
     <bpmn:sequenceFlow id="Flow_1ero0i1" name="Suspender" sourceRef="Gateway_1gvk6y4" targetRef="Event_1ac0w3b" />
     <bpmn:endEvent id="Event_0m9og07" name="Estado cancelado">
       <bpmn:incoming>Flow_184wyq8</bpmn:incoming>
@@ -203,6 +197,12 @@
     <bpmn:eventBasedGateway id="Gateway_13zw5v0" name="Decisão do coordenador da UFC" />
     <bpmn:sequenceFlow id="Flow_1lyceh5" sourceRef="Event_0npdmn9" targetRef="Gateway_1efohsn" />
     <bpmn:sequenceFlow id="Flow_0y56hfe" sourceRef="Event_0dy4pny" targetRef="Gateway_1efohsn" />
+    <bpmn:sequenceFlow id="Flow_184wyq8" name="Cancelar" sourceRef="Gateway_1gvk6y4" targetRef="Event_0m9og07" />
+    <bpmn:exclusiveGateway id="Gateway_1gvk6y4" name="Decisão do coordenador da UFC">
+      <bpmn:incoming>Flow_0fzmj1g</bpmn:incoming>
+      <bpmn:outgoing>Flow_184wyq8</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1ero0i1</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0gj270j">
@@ -320,12 +320,6 @@
           <dc:Bounds x="456" y="503" width="88" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Gateway_1gvk6y4_di" bpmnElement="Gateway_1gvk6y4" isMarkerVisible="true">
-        <dc:Bounds x="1736" y="282" width="50" height="50" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1722" y="240" width="78" height="40" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_09u00zi_di" bpmnElement="Event_1ac0w3b" bioc:stroke="#831311" bioc:fill="#ffcdd2" color:background-color="#ffcdd2" color:border-color="#831311">
         <dc:Bounds x="2032" y="289" width="36" height="36" />
         <bpmndi:BPMNLabel>
@@ -348,6 +342,12 @@
         <dc:Bounds x="1675" y="445" width="50" height="50" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="1660" y="400" width="78" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1gvk6y4_di" bpmnElement="Gateway_1gvk6y4" isMarkerVisible="true">
+        <dc:Bounds x="1765" y="282" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1751" y="240" width="78" height="40" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_11wsegj_di" bpmnElement="Flow_11wsegj">
@@ -475,7 +475,7 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0fzmj1g_di" bpmnElement="Flow_0fzmj1g">
         <di:waypoint x="1648" y="307" />
-        <di:waypoint x="1736" y="307" />
+        <di:waypoint x="1765" y="307" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0nedosb_di" bpmnElement="Flow_0nedosb">
         <di:waypoint x="2050" y="289" />
@@ -484,18 +484,18 @@
         <di:waypoint x="1630" y="289" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_184wyq8_di" bpmnElement="Flow_184wyq8">
-        <di:waypoint x="1761" y="332" />
-        <di:waypoint x="1761" y="420" />
+        <di:waypoint x="1790" y="332" />
+        <di:waypoint x="1790" y="420" />
         <di:waypoint x="1862" y="420" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1767" y="372" width="45" height="14" />
+          <dc:Bounds x="1796" y="372" width="45" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1ero0i1_di" bpmnElement="Flow_1ero0i1">
-        <di:waypoint x="1786" y="307" />
+        <di:waypoint x="1815" y="307" />
         <di:waypoint x="2032" y="307" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1882" y="289" width="54" height="14" />
+          <dc:Bounds x="1897" y="289" width="54" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1lyceh5_di" bpmnElement="Flow_1lyceh5">
