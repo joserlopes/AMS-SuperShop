@@ -53,7 +53,7 @@
     <bpmn:subProcess id="Activity_0zekjth" name="Confirmação de encomenda">
       <bpmn:incoming>Flow_0mieokb</bpmn:incoming>
       <bpmn:outgoing>Flow_1ap1wkl</bpmn:outgoing>
-      <bpmn:standardLoopCharacteristics />
+      <bpmn:multiInstanceLoopCharacteristics />
       <bpmn:startEvent id="Event_0gajk58">
         <bpmn:outgoing>Flow_0zb57k5</bpmn:outgoing>
       </bpmn:startEvent>
@@ -219,7 +219,7 @@
     <bpmn:subProcess id="Activity_1o8mgkb" name="Processo de arrumar o(s) artigo(s)">
       <bpmn:incoming>Flow_1dp1aju</bpmn:incoming>
       <bpmn:outgoing>Flow_10ikamt</bpmn:outgoing>
-      <bpmn:standardLoopCharacteristics />
+      <bpmn:multiInstanceLoopCharacteristics />
       <bpmn:startEvent id="Event_06p3cpz">
         <bpmn:outgoing>Flow_0race23</bpmn:outgoing>
       </bpmn:startEvent>
@@ -244,16 +244,16 @@
       <bpmn:endEvent id="Event_0i5f9hb">
         <bpmn:incoming>Flow_0np08yk</bpmn:incoming>
       </bpmn:endEvent>
-      <bpmn:sequenceFlow id="Flow_0race23" sourceRef="Event_06p3cpz" targetRef="Activity_0za4m57" />
-      <bpmn:sequenceFlow id="Flow_1p0on65" sourceRef="Activity_0za4m57" targetRef="Gateway_0i91uk5" />
-      <bpmn:sequenceFlow id="Flow_1iuz2ip" name="Artigo não existe" sourceRef="Gateway_0i91uk5" targetRef="Activity_0hcwg11" />
-      <bpmn:sequenceFlow id="Flow_0sbp5qx" sourceRef="Activity_0hcwg11" targetRef="Gateway_16y439m" />
-      <bpmn:sequenceFlow id="Flow_0i3fzq8" name="Artigo existe" sourceRef="Gateway_0i91uk5" targetRef="Gateway_16y439m" />
-      <bpmn:sequenceFlow id="Flow_0wl5bl7" sourceRef="Gateway_16y439m" targetRef="Activity_10bd1w9" />
       <bpmn:task id="Activity_10bd1w9" name="Arrumar artigo em loja">
         <bpmn:incoming>Flow_0wl5bl7</bpmn:incoming>
         <bpmn:outgoing>Flow_0np08yk</bpmn:outgoing>
       </bpmn:task>
+      <bpmn:sequenceFlow id="Flow_0race23" sourceRef="Event_06p3cpz" targetRef="Activity_0za4m57" />
+      <bpmn:sequenceFlow id="Flow_1p0on65" sourceRef="Activity_0za4m57" targetRef="Gateway_0i91uk5" />
+      <bpmn:sequenceFlow id="Flow_1iuz2ip" name="Artigo não existe" sourceRef="Gateway_0i91uk5" targetRef="Activity_0hcwg11" />
+      <bpmn:sequenceFlow id="Flow_0i3fzq8" name="Artigo existe" sourceRef="Gateway_0i91uk5" targetRef="Gateway_16y439m" />
+      <bpmn:sequenceFlow id="Flow_0sbp5qx" sourceRef="Activity_0hcwg11" targetRef="Gateway_16y439m" />
+      <bpmn:sequenceFlow id="Flow_0wl5bl7" sourceRef="Gateway_16y439m" targetRef="Activity_10bd1w9" />
       <bpmn:sequenceFlow id="Flow_0np08yk" sourceRef="Activity_10bd1w9" targetRef="Event_0i5f9hb" />
     </bpmn:subProcess>
   </bpmn:process>
@@ -268,7 +268,7 @@
     <bpmn:subProcess id="Activity_1bon0gj" name="Processo de arrumar o(s) artigo(s)">
       <bpmn:incoming>Flow_1dhihax</bpmn:incoming>
       <bpmn:outgoing>Flow_0o7vlyp</bpmn:outgoing>
-      <bpmn:standardLoopCharacteristics />
+      <bpmn:multiInstanceLoopCharacteristics />
       <bpmn:startEvent id="Event_0k5rc05">
         <bpmn:outgoing>Flow_0u522u6</bpmn:outgoing>
       </bpmn:startEvent>
@@ -639,9 +639,8 @@
       <bpmndi:BPMNShape id="Event_12z4unr_di" bpmnElement="Event_12z4unr">
         <dc:Bounds x="1672" y="1287" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1o8mgkb_di" bpmnElement="Activity_1o8mgkb" isExpanded="true">
+      <bpmndi:BPMNShape id="Activity_0fexr67_di" bpmnElement="Activity_1o8mgkb" isExpanded="true">
         <dc:Bounds x="490" y="1130" width="1110" height="360" />
-        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_06p3cpz_di" bpmnElement="Event_06p3cpz">
         <dc:Bounds x="530" y="1322" width="36" height="36" />
