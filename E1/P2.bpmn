@@ -116,9 +116,6 @@
       <bpmn:incoming>Flow_13l04np</bpmn:incoming>
       <bpmn:outgoing>Flow_00v99cp</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:startEvent id="Event_08oezs1">
-      <bpmn:outgoing>Flow_13l04np</bpmn:outgoing>
-    </bpmn:startEvent>
     <bpmn:intermediateThrowEvent id="Event_0wrf3hz" name="envio de sugestões">
       <bpmn:incoming>Flow_1del023</bpmn:incoming>
       <bpmn:outgoing>Flow_15jxhre</bpmn:outgoing>
@@ -201,8 +198,11 @@
     <bpmn:sequenceFlow id="Flow_17lwyxt" sourceRef="Event_0pynfcc" targetRef="Event_1wv64yi" />
     <bpmn:sequenceFlow id="Flow_001xhxs" sourceRef="Event_1wv64yi" targetRef="Activity_19rii6d" />
     <bpmn:sequenceFlow id="Flow_0h14711" sourceRef="Activity_19rii6d" targetRef="Activity_02c5gzr" />
+    <bpmn:startEvent id="Event_08oezs1">
+      <bpmn:outgoing>Flow_13l04np</bpmn:outgoing>
+    </bpmn:startEvent>
     <bpmn:textAnnotation id="TextAnnotation_1bx7m6t">
-      <bpmn:text>Pedido feito a empresa FUTURE</bpmn:text>
+      <bpmn:text>Pedido feito à empresa FUTURE</bpmn:text>
     </bpmn:textAnnotation>
     <bpmn:association id="Association_03kpeup" sourceRef="Activity_0czad9f" targetRef="TextAnnotation_1bx7m6t" />
   </bpmn:process>
@@ -527,7 +527,7 @@
       <bpmndi:BPMNShape id="Event_16tvl39_di" bpmnElement="Event_16tvl39">
         <dc:Bounds x="1322" y="172" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1311" y="215" width="58" height="27" />
+          <dc:Bounds x="1311" y="215" width="59" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_14lge9f" bpmnElement="Event_0pynfcc">
